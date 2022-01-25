@@ -28,6 +28,9 @@ npm run build && npm run start
 
 ## Usage
 
+<img width="932" alt="kickit-screenshot" src="https://user-images.githubusercontent.com/88466341/150897198-5e407e7b-0377-4486-a3ba-2f753c20711e.png">
+
+
 Just enter a list item into the text input field, select an "eagerness" level, and then click 'Add Bucket List Item' button. You also have the option then to edit or delete individual items by clicking the corresponding icons!
 
 ## License
