@@ -33,17 +33,25 @@ function Bucket(props) {
       }
       key={index}
     >
-      // TODO: Add an onClick event that invokes the `completeBucketItem` method
-      passing the item id as a argument
       <div key={id} onClick={() => props.completeBucketItem(id)}>
         {text}
       </div>
       <div className="icons">
         // TODO: Add an onClick event update the `edit` object with the `id`,
         `value`, and `eagerness` properties
-        <p onClick={""}> ✏️</p>
+        <p
+          onClick={() =>
+            setEdit({
+              id: id,
+              value: text,
+              eagerness: eagnerness,
+            })
+          }
+        >
+          ✏️
+        </p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
-        <p onClick={""}> 🗑️</p>
+        <p onClick={() => props.removeBucketItem(id)}> 🗑️</p>
       </div>
     </div>
   ));
