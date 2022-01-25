@@ -37,8 +37,6 @@ function Bucket(props) {
         {text}
       </div>
       <div className="icons">
-        // TODO: Add an onClick event update the `edit` object with the `id`,
-        `value`, and `eagerness` properties
         <p
           onClick={() =>
             setEdit({
@@ -50,7 +48,6 @@ function Bucket(props) {
         >
           ✏️
         </p>
-        {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
         <p onClick={() => props.removeBucketItem(id)}> 🗑️</p>
       </div>
     </div>
