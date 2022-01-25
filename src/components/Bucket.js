@@ -8,8 +8,6 @@ function Bucket(props) {
     eagerness: "",
   });
 
-  console.log(props.bucket);
-
   const submitUpdate = (value) => {
     props.editBucketItem(edit.id, value);
     setEdit({
@@ -33,12 +31,12 @@ function Bucket(props) {
       }
       key={index}
     >
-      <div key={id} onClick={() => props.completeBucketItem(id)}>
+      <div key={id} onClick={(_) => props.completeBucketItem(id)}>
         {text}
       </div>
       <div className="icons">
         <p
-          onClick={() =>
+          onClick={(_) =>
             setEdit({
               id: id,
               value: text,
@@ -48,7 +46,7 @@ function Bucket(props) {
         >
           ✏️
         </p>
-        <p onClick={() => props.removeBucketItem(id)}> 🗑️</p>
+        <p onClick={(_) => props.removeBucketItem(id)}> 🗑️</p>
       </div>
     </div>
   ));
