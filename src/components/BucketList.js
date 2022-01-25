@@ -15,7 +15,6 @@ function BucketList() {
   const completeBucketItem = (id) => {
     // If the ID passed to this function matches the ID of the item that was clicked, mark it as complete
     let updatedBucket = bucket.map((item) => {
-      // TODO: Write logic that marks an item as complete or incomplete when invoked
       if (item.id === id) {
         item.isComplete = !item.isComplete;
       }
@@ -28,8 +27,10 @@ function BucketList() {
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
     // TODO: Write logic that will return an array of items that don't contain the ID passed to this function
+    const updatedBucket = [...bucket].filter((item) => item.id !== id);
     // filter method
     // TODO: Update the bucket state variable
+    setBucket(updatedBucket);
   };
 
   // Function to edit the bucket list item
