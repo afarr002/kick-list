@@ -45,7 +45,7 @@ const Bucket = ({
             setEdit({
               id: id,
               value: text,
-              eagerness: eagnerness,
+              eagerness: eagerness,
             })
           }
         >
