@@ -11,9 +11,7 @@ function Bucket(props) {
   console.log(props.bucket);
 
   const submitUpdate = (value) => {
-    // TODO: Write logic to update the `edit` value in state after a user updates an entry in the list
     props.editBucketItem(edit.id, value);
-    // TODO: Set the key:value pairs in the `edit` object back to empty strings
     setEdit({
       id: null,
       value: "",
@@ -26,11 +24,19 @@ function Bucket(props) {
     return <BucketForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  return props.bucket.map((item, index) => (
+  return props.bucket.map(({ isComplete, eagerness }, index) => (
     // TODO: Add a className of `bucket row complete ${item.eagerness}` for completed items, and `bucket-row ${item.eagerness}` for non-completed items
+
     // TODO: Add a key attribute set to the value of the index position
     // Hint: use a ternary operator
-    <div className={""} key={""}>
+    <div
+      className={
+        isComplete
+          ? `bucket-row complete ${eagerness}`
+          : `bucket-row ${eagerness}`
+      }
+      key={index}
+    >
       // TODO: Add an onClick event that invokes the `completeBucketItem` method
       passing the item id as a argument
       <div key={""} onClick={""}>
