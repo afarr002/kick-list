@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import BucketForm from "./BucketForm";
 
-function Bucket(props) {
+const Bucket = ({
+  editBucketItem,
+  bucket,
+  completeBucketItem,
+  removeBucketItem,
+}) => {
   const [edit, setEdit] = useState({
     id: null,
     value: "",
@@ -9,7 +14,7 @@ function Bucket(props) {
   });
 
   const submitUpdate = (value) => {
-    props.editBucketItem(edit.id, value);
+    editBucketItem(edit.id, value);
     setEdit({
       id: null,
       value: "",
@@ -22,7 +27,7 @@ function Bucket(props) {
     return <BucketForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  return props.bucket.map(({ isComplete, eagerness, id, text }, index) => (
+  return bucket.map(({ isComplete, eagerness, id, text }, index) => (
     <div
       className={
         isComplete
@@ -31,7 +36,7 @@ function Bucket(props) {
       }
       key={index}
     >
-      <div key={id} onClick={(_) => props.completeBucketItem(id)}>
+      <div key={id} onClick={(_) => completeBucketItem(id)}>
         {text}
       </div>
       <div className="icons">
@@ -46,10 +51,10 @@ function Bucket(props) {
         >
           ✏️
         </p>
-        <p onClick={(_) => props.removeBucketItem(id)}> 🗑️</p>
+        <p onClick={(_) => removeBucketItem(id)}> 🗑️</p>
       </div>
     </div>
   ));
-}
+};
 
 export default Bucket;
