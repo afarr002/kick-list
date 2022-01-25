@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function BucketForm({ onSubmit, edit }) {
+const BucketForm = ({ onSubmit, edit }) => {
   const [input, setInput] = useState("");
   let [eagerness, setEagerness] = useState("");
 
@@ -83,6 +83,6 @@ function BucketForm({ onSubmit, edit }) {
       </form>
     </div>
   );
-}
+};
 
 export default BucketForm;

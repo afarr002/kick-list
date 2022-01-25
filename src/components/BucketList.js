@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BucketForm from "./BucketForm";
 import Bucket from "./Bucket";
 
-function BucketList() {
+const BucketList = () => {
   const [bucket, setBucket] = useState([]);
 
   // Function to add a bucket list item
@@ -56,6 +56,6 @@ function BucketList() {
       ></Bucket>
     </div>
   );
-}
+};
 
 export default BucketList;
