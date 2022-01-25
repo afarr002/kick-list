@@ -1,1 +1,1 @@
-# Bucket List App
+# kick-list - in progress - coming soon!
